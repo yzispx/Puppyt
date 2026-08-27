@@ -1,0 +1,35 @@
+Third-Party Software Notice
+
+Puppyt currently includes or declares the following third-party software:
+
+Deno
+License: MIT
+Binary: app/bin/deno.exe
+See: DENO_LICENSE.txt
+
+FFmpeg
+License: GPLv3 build with additional third-party component licenses
+Binaries: app/bin/ffmpeg.exe, app/bin/ffplay.exe, app/bin/ffprobe.exe
+See: FFMPEG_LICENSE.txt
+
+yt-dlp
+License: Unlicense / public domain dedication
+Binary: app/bin/yt-dlp.exe
+See: YTDLP_LICENSE.txt
+
+Flask
+License: BSD 3-Clause
+Declared dependency: app/requirements.txt
+See: FLASK_LICENSE.txt
+
+Rich
+License: MIT
+Declared dependency: app/requirements.txt
+See: RICH_LICENSE.txt
+
+Important:
+The FFmpeg executables are a prebuilt GPL-enabled distribution. If Puppyt is
+distributed to others, review FFmpeg's GPLv3 terms and provide the required
+corresponding source or source offer for the exact build. FFmpeg also includes
+third-party libraries with separate license notices; consult the FFmpeg source
+and the build provider's licensing information for the complete list.

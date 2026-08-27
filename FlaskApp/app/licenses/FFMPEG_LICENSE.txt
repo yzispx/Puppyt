@@ -1,0 +1,29 @@
+FFmpeg License Notice
+
+The bundled ffmpeg.exe, ffplay.exe, and ffprobe.exe are from:
+FFmpeg essentials build, version 2026-08-17-git-426841da9d,
+www.gyan.dev/ffmpeg/builds/
+
+This build reports the following configuration flags:
+--enable-gpl --enable-version3
+
+Because this build enables GPL components, its applicable primary license is
+the GNU General Public License, version 3 (GPLv3), together with the licenses
+of the included third-party libraries listed in FFmpeg's source distribution.
+
+Full GPLv3 text:
+https://www.gnu.org/licenses/gpl-3.0.txt
+
+FFmpeg license and source information:
+https://ffmpeg.org/legal.html
+https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
+https://github.com/FFmpeg/FFmpeg/blob/master/COPYING.GPLv3
+
+The exact build configuration and version are printed by each executable with:
+ffmpeg.exe -version
+ffplay.exe -version
+ffprobe.exe -version
+
+This notice does not replace the corresponding-source obligations that may
+apply when distributing a GPL-covered binary. Keep the matching FFmpeg source
+or an appropriate written source offer with any public distribution.

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <title>Puppyt!}</title>
+  </head>
+  <body class="bg">
+    <div id="logo-div">
+      <div id="logo-bg"></div>
+      <img id="logo-fg" src="assets/img/logo/logo_fg.png" alt="Logo" />
+    </div>
+
+    <div>
+      <form method="POST" action="/">
+        <div id="WavyText">
+          <wt id="wt0_-" class="wt">-</wt>
+          <wt id="wt1_[" class="wt">[</wt>
+          <wt id="wt2_E" class="wt">E</wt>
+          <wt id="wt3_Z" class="wt">Z</wt>
+          <wt id="wt4_" class="wt_sb">_</wt>
+          <wt id="wt5_M" class="wt">M</wt>
+          <wt id="wt6_e" class="wt">e</wt>
+          <wt id="wt7_d" class="wt">d</wt>
+          <wt id="wt8_i" class="wt">i</wt>
+          <wt id="wt9_a" class="wt">a</wt>
+          <wt id="wt10_" class="wt_sb">_</wt>
+          <wt id="wt11_D" class="wt">D</wt>
+          <wt id="wt12_o" class="wt">o</wt>
+          <wt id="wt13_w" class="wt">w</wt>
+          <wt id="wt14_n" class="wt">n</wt>
+          <wt id="wt15_l" class="wt">l</wt>
+          <wt id="wt16_o" class="wt">o</wt>
+          <wt id="wt17_a" class="wt">a</wt>
+          <wt id="wt18_d" class="wt">d</wt>
+          <wt id="wt19_e" class="wt">e</wt>
+          <wt id="wt20_r" class="wt">r</wt>
+          <wt id="wt21_]" class="wt">]</wt>
+          <wt id="wt22_-" class="wt">-</wt>
+        </div>
+        <label>Media URL</label><br />
+      </form>
+      <div id="MediaDownload">
+        <button id="pasteBtn">
+          <img id="pasteIcon" src="./assets/img/icons/pasteicon.png" />
+        </button>
+        <input
+          id="media-url"
+          style="width: 100%; height: 100%"
+          type="text"
+          name="MediaURL"
+          placeholder="Please paste a supported media URL."
+        />
+        <button id="download-btn" type="submit" disabled>DOWNLOAD</button>
+      </div>
+
+      <a
+        id="supported-sources-text"
+        href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Check out the supported sources!
+      </a>
+      <div id="switchesDiv">
+        <div id="switchVidDiv">
+          <button disabled class="switch switchON">VIDEO</button>
+          <div class="switchOpt">
+            <label
+              ><input
+                type="radio"
+                name="choicevid"
+                value="mp4"
+                checked
+              />.MP4</label
+            >
+            <label
+              ><input type="radio" name="choicevid" value="mkv" />.MKV</label
+            >
+            <label
+              ><input type="radio" name="choicevid" value="webm" />.WEBM</label
+            >
+          </div>
+        </div>
+
+        <div id="switchAud">
+          <div id="switchAudDiv">
+            <button class="switch switchOFF">AUDIO</button>
+            <div class="switchOpt">
+              <label>
+                <input type="radio" name="choiceaud" value="mp4" disabled />
+                .MP3</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="choiceaud"
+                  value="mkv"
+                  disabled
+                />.WAV</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="choiceaud"
+                  value="webm"
+                  disabled
+                />.OGG</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="script.js"></script>

@@ -1,0 +1,111 @@
+{% extends "base.html" %} {% block title %} Puppyt - {{page_name}} {% endblock
+%} {% block content %}
+
+<body class="bg">
+  <div>
+    <form method="POST" action="{{ url_for('test') }}">
+      <div id="WavyText">
+        <wt id="wt0_-" class="wt">-</wt>
+        <wt id="wt1_[" class="wt">[</wt>
+        <wt id="wt2_T" class="wt">T</wt>
+        <wt id="wt3_h" class="wt">h</wt>
+        <wt id="wt3_i" class="wt">i</wt>
+        <wt id="wt4_s" class="wt">s</wt>
+        <wt id="wt4_" class="wt_sb">_</wt>
+        <wt id="wt5_i" class="wt">i</wt>
+        <wt id="wt6_s" class="wt">s</wt>
+        <wt id="wt7_" class="wt_sb">_</wt>
+        <wt id="wt8_a" class="wt">a</wt>
+        <wt id="wt9_" class="wt_sb">_</wt>
+        <wt id="wt10_w" class="wt">w</wt>
+        <wt id="wt11_a" class="wt">a</wt>
+        <wt id="wt12_v" class="wt">v</wt>
+        <wt id="wt13_y" class="wt">y</wt>
+        <wt id="wt14_" class="wt_sb">_</wt>
+        <wt id="wt15_t" class="wt">t</wt>
+        <wt id="wt16_e" class="wt">e</wt>
+        <wt id="wt17_x" class="wt">x</wt>
+        <wt id="wt18_t" class="wt">t</wt>
+        <wt id="wt19_!" class="wt">!</wt>
+        <wt id="wt20_]" class="wt">]</wt>
+        <wt id="wt21_-" class="wt">-</wt>
+      </div>
+      <p>This is a paragraph.</p>
+      <p class="green">This is a paragraph too (but green!)</p>
+      <input
+        type="text"
+        name="text_input"
+        placeholder="This is a text input!"
+      />
+      <button type="submit">This is a submit button!</button>
+      <button type="submit" disabled>This is a disabled button!</button>
+
+      <!-- <fieldset> -->
+      <legend>Inputs</legend>
+      <label
+        ><input type="checkbox" name="c1" value="c1" checked />Check 1</label
+      >
+      <label><input type="checkbox" name="c2" value="c2" />Check 2</label>
+      <label
+        ><input type="checkbox" name="c3" value="c3" disabled /> Check 3</label
+      >
+
+      <div class="radioOpts">
+        <label>
+          <img src="../static/assets/img/icons/input/radio/rad0.png">
+          <input
+            type="radio"
+            style="display: none"
+            name="choice"
+            value="a"
+            checked
+          />
+          Choice A
+        </label>
+
+        <label>
+          <img src="../static/assets/img/icons/input/radio/rad0.png">
+          <input type="radio" style="display: none" name="choice" value="b" />
+          Choice B
+        </label>
+
+        <label>
+          <img src="../static/assets/img/icons/input/radio/rad0.png">
+          <input
+            type="radio"
+            style="display: none"
+            name="choice"
+            value="c"
+            disabled
+          />
+          Choice C
+        </label>
+      </div>
+
+      <div>
+        <label for="select_test">Select:</label>
+        <select
+          id="select_test"
+          name="select_test"
+          onfocus="this.size = 4"
+          onblur="this.size = 1"
+          onchange="
+            this.size = 1;
+            this.blur();
+          "
+        >
+          <option value="one">One</option>
+          <option value="two" selected>Two</option>
+          <option value="three">Three</option>
+          <option value="four" disabled>Four</option>
+        </select>
+      </div>
+      <div>
+        <label for="progress">Progress:</label>
+        <progress id="progress" value="70" max="100">70%</progress>
+      </div>
+    </form>
+  </div>
+</body>
+
+{% endblock %}
