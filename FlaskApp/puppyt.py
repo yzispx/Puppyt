@@ -1,4 +1,4 @@
-from app.services.imports import ctypes, os, platform, subprocess, sys, importlib
+from app.services.imports import ctypes, os, platform, subprocess, sys,time, importlib, pathlib
 
 #Colors
 
@@ -16,7 +16,10 @@ CYAN = "\033[36m"
 WHITE = "\033[37m"
 
 # flask app.py main entry point
-app_py = "./app/app.py"
+BASE_DIR = pathlib.Path(__file__).resolve().parent
+app_py = BASE_DIR / "app" / "app.py"
+YT_DLP = BASE_DIR / "bin" / "yt-dlp.exe"
+
 
 # Determine the current operating system
 if platform.system() == "Windows":
@@ -48,7 +51,7 @@ while True:
         break
     elif pipcheck.lower() in ["y"," ","","yes"]:
         print("Installing dependencies...")
-        packages = {"Flask": "flask", "rich": "rich"}
+        packages = {"Flask": "flask", "rich": "rich", "pyperclip": "pyperclip"}
 
         for package, module in packages.items():
             try:
@@ -69,6 +72,7 @@ while True:
         cls()
         
 
+import pyperclip
 
 # Check for administrative privileges
 if cur_os == "win":

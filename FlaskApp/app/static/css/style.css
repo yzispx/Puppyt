@@ -1,4 +1,8 @@
-/* 
+/* ==========================================================================
+   1. COLOR PALETTE
+   ========================================================================== */
+
+/*
 BW:
 0e071b
 1a133b
@@ -27,6 +31,7 @@ cb0045
 */
 
 :root {
+  /* Black & White scale */
   --bw_0: #0e071b;
   --bw_1: #1a133b;
   --bw_2: #24265b;
@@ -36,12 +41,14 @@ cb0045
   --bw_6: #c6d0de;
   --bw_7: #ffffff;
 
+  /* Primary / accent colors */
   --p_0: #00ffbf;
   --p_1: #0cded5;
   --p_2: #159fbc;
   --p_3: #1a699b;
   --p_4: #1b4179;
 
+  /* Negative / error colors */
   --n_0: #ff0040;
   --n_1: #cb0045;
   --n_2: #970041;
@@ -49,6 +56,10 @@ cb0045
   --n_4: #590040;
   --n_5: #31083a;
 }
+
+/* ==========================================================================
+   2. FONT FACES
+   ========================================================================== */
 
 @font-face {
   font-family: "Pixel";
@@ -68,6 +79,40 @@ cb0045
   -webkit-font-smoothing: none;
 }
 
+/* ==========================================================================
+   3. SHARED PIXEL FONT BASE
+   Common font-rendering rules reused by every text-bearing element below.
+   Font-size and any element-specific rules stay in their own section
+   so the original per-element logic is preserved.
+   ========================================================================== */
+
+h1,
+p,
+a,
+legend,
+label,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select,
+button,
+.wt {
+  font-family: "Pixel", monospace;
+  text-rendering: optimizeSpeed;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+/* ==========================================================================
+   4. GLOBAL / BASE
+   ========================================================================== */
+
 html {
   display: flex;
   justify-content: center;
@@ -77,30 +122,33 @@ html {
   image-rendering: pixelated;
 }
 
-/* Text */
+/* ==========================================================================
+   5. TYPOGRAPHY
+   ========================================================================== */
 
 h1 {
-  font-family: "Pixel", monospace;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
   font-size: 40px;
 }
+
 p,
 a {
-  font-family: "Pixel", monospace;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
   font-size: 20px;
 }
 
+legend {
+  font-size: 20px;
+}
+
+label {
+  font-size: 20px;
+}
+
+/* Text hidden by default (e.g. used for screen-reader-only / fade-in text) */
 .wt_sb {
   opacity: 0;
 }
 
+/* Accent-colored text */
 .green,
 a {
   color: var(--p_0);
@@ -111,25 +159,9 @@ a {
   color: var(--bw_0);
 }
 
-legend {
-  font-family: "Pixel", monospace;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
-  font-size: 20px;
-}
-
-label {
-  font-family: "Pixel", monospace;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
-  font-size: 20px;
-}
-
-/* Inputs (Text Fields) */
+/* ==========================================================================
+   6. FORM ELEMENTS — TEXT INPUTS
+   ========================================================================== */
 
 input[type="text"],
 input[type="password"],
@@ -139,7 +171,6 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 textarea {
-  font-family: "Pixel", monospace;
   color: var(--bw_7);
   background-color: var(--bw_1);
   border-width: 3px;
@@ -147,10 +178,6 @@ textarea {
   box-shadow: 0px 0px 0px 3px var(--bw_3);
   border-style: solid;
   padding: 4px 8px;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
   font-size: 20px;
 }
 
@@ -162,14 +189,15 @@ input[type="search"]::placeholder,
 input[type="tel"]::placeholder,
 input[type="url"]::placeholder,
 textarea::placeholder {
-  color: var(--bw_5);
+  color: var(--bw_3);
   opacity: 1;
 }
 
-/* Inputs (Select) */
+/* ==========================================================================
+   7. FORM ELEMENTS — SELECT / DROPDOWN
+   ========================================================================== */
 
 select {
-  font-family: "Pixel", monospace;
   color: var(--bw_7);
   background-color: var(--bw_1);
   border-width: 3px;
@@ -177,10 +205,6 @@ select {
   box-shadow: 0px 0px 0px 3px var(--bw_3);
   border-style: solid;
   padding: 4px 8px;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
   font-size: 20px;
   margin: 6px;
 }
@@ -215,16 +239,48 @@ select option:focus {
   color: var(--bw_0) !important;
 }
 
-/* Buttons */
+/* ==========================================================================
+   8. FORM ELEMENTS — RADIO (custom pixel-icon radio buttons)
+   ========================================================================== */
+
+input[type="radio"] {
+  accent-color: var(--p_0);
+}
+
+.fadedRadio{
+  opacity: 20%;
+}
+
+.fadedLabel{
+  color: var(--bw_3) !important
+}
+
+/* Default (unchecked) radio icon */
+.radioOpts label img {
+  content: url("../assets/img/icons/input/radio/rad0.png");
+}
+
+/* Checked radio icon */
+.radioOpts label:has(input:checked) img {
+  content: url("../assets/img/icons/input/radio/rad1.png");
+}
+
+/* Disabled radio icon */
+.radioOpts label:has(input:disabled) img {
+  content: url("../assets/img/icons/input/radio/rad2.png");
+}
+
+.radioOpts label:has(input:disabled) {
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   9. BUTTONS
+   ========================================================================== */
 
 button {
-  color: var(--bw_7);
-  font-family: "Pixel", monospace;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
   font-size: 20px;
+  color: var(--bw_7);
   border-style: solid;
   background: linear-gradient(to bottom, var(--p_3) 50%, var(--p_2) 50%);
   border-image: linear-gradient(to bottom, var(--p_2) 50%, var(--p_3) 50%) 1;
@@ -266,13 +322,11 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Wavy Text */
+/* ==========================================================================
+   10. WAVY TEXT ANIMATION
+   ========================================================================== */
+
 .wt {
-  font-family: "Pixel", monospace;
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
   animation: wt 1s ease-in-out infinite alternate;
   position: relative;
   will-change: top;
@@ -293,10 +347,15 @@ button:disabled {
   from {
     top: 0px;
   }
+
   to {
     top: 32px;
   }
 }
+
+/* ==========================================================================
+   11. ANIMATED BACKGROUND
+   ========================================================================== */
 
 .bg {
   position: fixed;
@@ -319,19 +378,23 @@ button:disabled {
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: 96px 96px;
   }
 }
 
-/* LOGO */
-/* LOGO */
+/* ==========================================================================
+   12. LOGO
+   ========================================================================== */
+
 #logo-div {
   position: relative;
   width: 591px;
   height: 189px;
 }
 
+/* Scrolling background layer, masked by the logo shape */
 #logo-bg {
   position: absolute;
   inset: 0;
@@ -361,11 +424,13 @@ button:disabled {
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: 1552px 1552px;
   }
 }
 
+/* Foreground logo layer (sits above the animated background) */
 #logo-fg {
   position: absolute;
   inset: 0;
@@ -375,6 +440,8 @@ button:disabled {
 
   z-index: 1;
 }
+
+/* Unused elsewhere in this file, kept for elements that reference it */
 @keyframes frame-bg-scroll {
   from {
     background-position: 0 0;
@@ -384,6 +451,10 @@ button:disabled {
     background-position: 1536px 1536px;
   }
 }
+
+/* ==========================================================================
+   13. MEDIA DOWNLOAD / PASTE UI
+   ========================================================================== */
 
 #MediaDownload {
   display: flex;
@@ -409,9 +480,17 @@ button:disabled {
 }
 
 #supported-sources-text {
-  display: flex;
-  justify-content: right;
+  position: relative;
+  /* display: inline-block; */
+  /* text-align: right; */
+  left:53%;
+  margin-bottom: 20px;
+  /* display: flex; */
 }
+
+/* ==========================================================================
+   14. VIDEO / AUDIO SWITCHES
+   ========================================================================== */
 
 #switchesDiv {
   display: flex;
@@ -452,23 +531,19 @@ button:disabled {
   letter-spacing: 3px;
 }
 
+/* Switch in the OFF state */
 .switchOFF {
   color: var(--bw_3) !important;
-  background: linear-gradient(
-    to bottom,
-    var(--bw_2) 0% 31%,
-    var(--bw_1) 37% 40%,
-    var(--bw_2) 40% 50%,
-    var(--bw_0) 50% 100%
-  ) !important;
-  border-image: linear-gradient(
-      to top,
+  background: linear-gradient(to bottom,
       var(--bw_2) 0% 31%,
       var(--bw_1) 37% 40%,
       var(--bw_2) 40% 50%,
-      var(--bw_0) 50% 100%
-    )
-    1 !important;
+      var(--bw_0) 50% 100%) !important;
+  border-image: linear-gradient(to top,
+      var(--bw_2) 0% 31%,
+      var(--bw_1) 37% 40%,
+      var(--bw_2) 40% 50%,
+      var(--bw_0) 50% 100%) 1 !important;
   box-shadow:
     0px 0px 0px 3px var(--bw_0),
     0px 0px 0px 6px var(--bw_2) !important;
@@ -476,47 +551,28 @@ button:disabled {
 
 .switchOFF:hover {
   color: var(--p_3) !important;
-  background: linear-gradient(
-    to bottom,
-    var(--p_4) 0% 31%,
-    var(--bw_2) 37% 40%,
-    var(--p_4) 40% 50%,
-    var(--bw_1) 50% 100%
-  ) !important;
-  border-image: linear-gradient(
-      to top,
+  background: linear-gradient(to bottom,
       var(--p_4) 0% 31%,
       var(--bw_2) 37% 40%,
       var(--p_4) 40% 50%,
-      var(--bw_1) 50% 100%
-    )
-    1 !important;
+      var(--bw_1) 50% 100%) !important;
+  border-image: linear-gradient(to top,
+      var(--p_4) 0% 31%,
+      var(--bw_2) 37% 40%,
+      var(--p_4) 40% 50%,
+      var(--bw_1) 50% 100%) 1 !important;
   box-shadow:
     0px 0px 0px 3px var(--bw_0),
     0px 0px 0px 6px var(--bw_2) !important;
 }
 
+/* Switch in the ON state */
 .switchON {
   padding: 8px !important;
   letter-spacing: 3px !important;
   color: var(--bw_7) !important;
   background-image: url("../assets/img/logo/scrollbg.png");
-  background: linear-gradient(
-    to top,
-    var(--p_0) 0% 12%,
-    var(--p_1) 12% 25%,
-    var(--p_2) 25% 31%,
-    var(--p_1) 31% 37%,
-    var(--p_2) 37% 50%,
-    var(--p_3) 50% 56%,
-    var(--p_2) 56% 62%,
-    var(--p_3) 62% 75%,
-    var(--p_4) 75% 81%,
-    var(--p_3) 81% 87%,
-    var(--p_4) 87% 100%
-  ) !important;
-  border-image: linear-gradient(
-      to bottom,
+  background: linear-gradient(to top,
       var(--p_0) 0% 12%,
       var(--p_1) 12% 25%,
       var(--p_2) 25% 31%,
@@ -527,9 +583,19 @@ button:disabled {
       var(--p_3) 62% 75%,
       var(--p_4) 75% 81%,
       var(--p_3) 81% 87%,
-      var(--p_4) 87% 100%
-    )
-    1 !important;
+      var(--p_4) 87% 100%) !important;
+  border-image: linear-gradient(to bottom,
+      var(--p_0) 0% 12%,
+      var(--p_1) 12% 25%,
+      var(--p_2) 25% 31%,
+      var(--p_1) 31% 37%,
+      var(--p_2) 37% 50%,
+      var(--p_3) 50% 56%,
+      var(--p_2) 56% 62%,
+      var(--p_3) 62% 75%,
+      var(--p_4) 75% 81%,
+      var(--p_3) 81% 87%,
+      var(--p_4) 87% 100%) 1 !important;
   box-shadow:
     0px 0px 0px 3px var(--bw_0),
     0px 0px 0px 6px var(--bw_2) !important;
@@ -537,32 +603,4 @@ button:disabled {
 
 .switchON:hover {
   cursor: default;
-}
-
-input[type="radio"]{
-  accent-color: var(--p_0);
-}
-
-.radioOpts label img {
-    content: url("../assets/img/icons/input/radio/rad0.png");
-}
-
-.radioOpts label:has(input:checked) img {
-    content: url("../assets/img/icons/input/radio/rad1.png");
-}
-
-.radioOpts label:has(input:disabled) img {
-    content: url("../assets/img/icons/input/radio/rad2.png");
-}
-
-.radioOpts label:has(input:checked) img {
-    content: url("../assets/img/icons/input/radio/rad1.png");
-}
-
-.radioOpts label:has(input:disabled) img {
-    content: url("../assets/img/icons/input/radio/rad2.png");
-}
-
-.radioOpts label:has(input:disabled) {
-    cursor: not-allowed;
 }

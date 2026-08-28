@@ -4,13 +4,9 @@
 <body class="bg">
   <div id="logo-div">
     <div id="logo-bg"></div>
-    <img
-      id="logo-fg"
-      src="{{ url_for('static', filename='assets/img/logo/logo_fg.png') }}"
-      alt="Logo"
-    />
+    <img id="logo-fg" src="{{ url_for('static', filename='assets/img/logo/logo_fg.png') }}" alt="Logo" />
   </div>
-
+  <!-- <p id="ClipboardContent" style="display: true;">test</p> -->
   <div>
     <form method="POST" action="/">
       <div id="WavyText">
@@ -44,67 +40,34 @@
       <button id="pasteBtn">
         <img id="pasteIcon" src="../static/assets/img/icons/pasteicon.png" />
       </button>
-      <input
-        id="media-url"
-        style="width: 100%; height: 100%"
-        type="text"
-        name="MediaURL"
-        placeholder="Please paste a supported media URL."
-      />
+      <input id="media-url-input" style="width: 100%; height: 100%" type="text" name="MediaURL"
+        placeholder="{{clipboard_content}}" />
       <button id="download-btn" type="submit" disabled>DOWNLOAD</button>
     </div>
 
-    <a
-      id="supported-sources-text"
-      href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a id="supported-sources-text" href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md" target="_blank"
+      rel="noopener noreferrer">
       Check out the supported sources!
     </a>
     <div id="switchesDiv">
       <div id="switchVidDiv">
-        <button disabled class="switch switchON">VIDEO</button>
-        <div class="switchOpt">
-          <label
-            ><input
-              type="radio"
-              name="choicevid"
-              value="mp4"
-              checked
-            />.MP4</label
-          >
+        <button id="vidBtn" disabled class="switch switchON">VIDEO</button>
+        <div id="swOptVid" class="switchOpt">
+          <label><input type="radio"  name="choicevid" value="mp4" checked />.MP4</label>
           <label><input type="radio" name="choicevid" value="mkv" />.MKV</label>
-          <label
-            ><input type="radio" name="choicevid" value="webm" />.WEBM</label
-          >
+          <label><input type="radio" name="choicevid" value="webm" />.WEBM</label>
         </div>
       </div>
 
       <div id="switchAud">
         <div id="switchAudDiv">
-          <button class="switch switchOFF">AUDIO</button>
-          <div class="switchOpt">
+          <button id="audBtn" class="switch switchOFF">AUDIO</button>
+          <div id="swOptAud" class="switchOpt">
             <label>
-              <input type="radio" name="choiceaud" value="mp4" disabled />
-              .MP3</label
-            >
-            <label
-              ><input
-                type="radio"
-                name="choiceaud"
-                value="mkv"
-                disabled
-              />.WAV</label
-            >
-            <label
-              ><input
-                type="radio"
-                name="choiceaud"
-                value="webm"
-                disabled
-              />.OGG</label
-            >
+              <input type="radio" name="choiceaud" value="mp4" disabled checked />
+              .MP3</label>
+            <label><input type="radio" name="choiceaud" value="mkv" disabled />.WAV</label>
+            <label><input type="radio" name="choiceaud" value="webm" disabled />.OGG</label>
           </div>
         </div>
       </div>

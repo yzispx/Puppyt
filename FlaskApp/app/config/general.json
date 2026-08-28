@@ -2,10 +2,10 @@
   "AppInfo": [
     {
       "appName": "Puppyt",
-      "version": "0.0.0",
+      "version": "1.0.0",
       "environment": "development",
       "debug": true,
-      "port": 3000,
+      "port": 1111,
       "islocalhostname": null,
       "pipDependenciesChecked": false
     }
